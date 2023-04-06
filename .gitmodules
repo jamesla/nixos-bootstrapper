@@ -1,0 +1,6 @@
+[submodule "carverlinux"]
+	path = carverlinux
+	url = https://github.com/jamesla/carverlinux
+[submodule "nixos"]
+	path = nixos
+	url = git@github.com:jamesla/nixos.git
