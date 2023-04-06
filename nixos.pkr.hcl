@@ -36,10 +36,8 @@ build {
     inline = [
       "parted /dev/sda --script -- mklabel msdos",
       "parted /dev/sda --script -- mkpart primary 1MiB -8GiB",
-      "parted /dev/sda --script -- mkpart primary linux-swap -8GiB 100%",
       "mkfs.ext4 -L nixos /dev/sda1",
-      "mkswap -L swap /dev/sda2",
-      "swapon /dev/sda2",
+      "sleep 5",
       "mount /dev/disk/by-label/nixos /mnt",
       "mkdir -p /mnt/etc/nixos"
     ]

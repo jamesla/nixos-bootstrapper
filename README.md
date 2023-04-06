@@ -4,7 +4,7 @@
 
 1. Install parallels, packer, vagrant
 
-2. 
+2. Provision:
 ```bash
 make
 ```

@@ -14,19 +14,12 @@
       fsType = "ext4";
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-label/swap"; }
-    ];
+  swapDevices = lib.mkForce [ ];
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  # nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-  #   "prl-tools"
-  # ];
-
   hardware.parallels = {
     enable = true;
-    # package = (config.boot.kernelPackages.callPackage ./prl-tools.nix { });
   }; 
 }
 

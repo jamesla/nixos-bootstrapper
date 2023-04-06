@@ -8,7 +8,7 @@ all: build-base run-vagrant
 build-base: ## build base box with packer
 	packer init nixos.pkr.hcl
 	packer build -on-error=ask nixos.pkr.hcl
-	vagrant box add --force nixos nixos.box
+	vagrant box add nixos nixos.box
 
 .PHONY: run-vagrant
 run-vagrant: ## run vagrant
